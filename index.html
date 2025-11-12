@@ -1,13 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="root">Всем привет</div>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <div class="app">
+      <div class="allTasks">
+        <h3>Список задач</h3>
+        <ul class="taskList"></ul>
+      </div>
+
+      <div class="addTaskForm">
+        <h3>Добавить задачу</h3>
+        <input class="taskName" placeholder="Название задачи" />
+        <textarea class="taskInfo" placeholder="Описание задачи"></textarea>
+        <label>
+          <input type="checkbox" class="taskImportant" /> Важная
+        </label>
+        <label>
+          <input type="checkbox" class="taskCompleted" /> Выполнена
+        </label>
+        <button class="addTask">Добавить задачу</button>
+      </div>
+
+      <div class="filters">
+        <h3>Найти</h3>
+        <label><input type="checkbox" class="importantFilter" /> Только важные</label>
+        <label><input type="checkbox" class="completedFilter" /> Только невыполненные</label>
+        <input class="searchName" placeholder="Поиск по названию" />
+        <button class="applyFilters">Применить фильтры</button>
+      </div>
+    </div>
+
+    <!-- Окно -->
+    <div class="modalOverlay">
+      <div class="modalWindow">
+        <h3>Редактировать задачу</h3>
+        <input class="editName" placeholder="Название задачи" />
+        <textarea class="editInfo" placeholder="Описание задачи"></textarea>
+        <label><input type="checkbox" class="editImportant" /> Важная</label>
+        <label><input type="checkbox" class="editCompleted" /> Выполнена</label>
+        <button class="saveEdit">Сохранить</button>
+        <button class="cancelEdit">Закрыть</button>
+      </div>
+    </div>
+
     <script src="./lib/index.js"></script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,143 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 225px auto;
+  grid-template-areas:
+    "allTasks addTaskForm"
+    "allTasks filters";
+  gap: 15px;
+  margin: auto 15%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.taskItem_name,
+.taskItem_info {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.allTasks {
+  grid-area: allTasks;
+}
+
+.addTaskForm {
+  grid-area: addTaskForm;
+}
+
+.addTask {
+  display: block;
+}
+
+.filters {
+  grid-area: filters;
+}
+
+input,
+textarea {
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #8997ad;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  margin-top: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #66758d;
+}
+
+.taskList {
+  list-style: none;
+  padding: 0;
+}
+
+.taskList li {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.property {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 4px 0;
+}
+
+.standard {
+  background-color: rgb(218, 227, 240);
+}
+
+.important {
+  color: #8e1808;
+  background-color: rgb(252, 191, 182);
+}
+
+.inProgress {
+  background-color: rgb(234, 234, 226);
+}
+
+.complete {
+  background-color: rgb(185, 243, 176);
+}
+
+.delBtn {
+  background: #de6d5e;
+}
+
+.delBtn:hover {
+  background: #ca3d2b;
+}
+
+.modalOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modalWindow {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 300px;
